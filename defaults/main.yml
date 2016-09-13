@@ -1,0 +1,39 @@
+---
+magento2_instance_name: "magento2"
+magento2_version_to_install: "magento-ce-2.0.7"
+magento2_install_path: "/var/www"
+magento2_magerun_bin_path: "/usr/local/bin/n98-magerun2.phar"
+magento2_install_sample_data: true
+magento2_enable_crons: true
+magento2_default_deployment_mode: "default"
+
+magento2_auth_public_key: "xxxxxxxxxxxxxxxxxxxxxx"
+magento2_auth_private_key: "xxxxxxxxxxxxxxxxxxxxxx"
+
+magento2_db_host: "127.0.0.1"
+magento2_db_name: "magento2"
+magento2_db_user: "root"
+magento2_db_password: ""
+magento2_db_prefix: ""
+
+magento2_language: "en_US"
+magento2_currency: "USD"
+magento2_timezone: "Europe/Berlin"
+
+magento2_admin_firstname: "John"
+magento2_admin_lastname: "Doe"
+magento2_admin_email: "mageadmin@example.com"
+magento2_admin_user: "admin"
+magento2_admin_password: "admin123"
+
+magento2_backend_frontname: "admin"
+magento2_base_url: "{{ '{{base_url}}' }}"
+magento2_base_url_secure: ""
+magento2_use_rewrites: "1"
+magento2_use_secure: "1"
+magento2_use_secure_admin: "1"
+magento2_use_security_key: "1"
+magento2_session_save: "files"
+magento2_cleanup_database: "1"
+magento2_key: ""
+magento2_sales_order_increment_prefix: ""

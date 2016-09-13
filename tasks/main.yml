@@ -1,0 +1,12 @@
+---
+- include: download.yml
+
+- include: install.yml
+
+- include: install-sampledata.yml
+  when: magento2_install_sample_data
+
+- include: setup-crons.yml
+  when: magento2_enable_crons
+
+- include: post-install.yml

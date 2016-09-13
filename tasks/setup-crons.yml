@@ -1,0 +1,15 @@
+---
+- name: "Setup Magento2 crons : Create maintenance cron"
+  cron: name="Magento maintenance for {{ magento2_instance_name }}"
+        user="www-data" job="{{ magento2_install_path }}/bin/magento cron:run | grep -v 'Ran jobs by schedule' >> {{ magento2_install_path }}/var/log/magento.cron.log"
+  when: magento2_enable_crons
+
+- name: "Setup Magento2 crons : Create update cron"
+  cron: name="Magento update cron for {{ magento2_instance_name }}"
+        user="www-data" job="{{ magento2_install_path }}/update/cron.php >> {{ magento2_install_path }}/log/update.cron.log"
+  when: magento2_enable_crons
+
+- name: "Setup Magento2 crons : Create Magento setup cron"
+  cron: name="Magento setup cron for {{ magento2_instance_name }}"
+        user="www-data" job="{{ magento2_install_path }}/bin/magento setup:cron:run >> {{ magento2_install_path }}/var/log/setup.cron.log"
+  when: magento2_enable_crons

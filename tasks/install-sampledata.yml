@@ -1,0 +1,18 @@
+---
+- name: "Install sample data : Set deploy mode to dev"
+  shell: >
+    {{ magento2_install_path }}/bin/magento deploy:mode:set developer
+
+- name: "Install sample data : Deploy"
+  shell: >
+    {{ magento2_install_path }}/bin/magento sampledata:deploy
+  args:
+      creates: "{{ magento2_install_path }}/pub/media/catalog"
+
+- name: "Install sample data : Run upgrade"
+  shell: >
+    {{ magento2_install_path }}/bin/magento setup:upgrade
+
+- name: "Install sample data : Set deploy mode to production"
+  shell: >
+    {{ magento2_install_path }}/bin/magento deploy:mode:set production

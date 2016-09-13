@@ -1,0 +1,10 @@
+---
+- name: "Installation : Install"
+  shell: >
+    {{ magento2_install_path }}/bin/magento setup:install
+    {{ install_options }}
+  args:
+    creates: "{{ magento2_install_path }}/app/etc/env.php"
+
+- name: "Installation : Add repo authentication file"
+  template: src=templates/auth.json.j2 dest={{ magento2_install_path }}/var/composer_home/auth.json

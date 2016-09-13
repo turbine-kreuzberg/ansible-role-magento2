@@ -1,0 +1,62 @@
+--admin-firstname='{{ magento2_admin_firstname }}' \
+--admin-lastname='{{ magento2_admin_lastname }}' \
+--admin-email='{{ magento2_admin_email }}' \
+--admin-user='{{ magento2_admin_user }}' \
+--admin-password='{{ magento2_admin_password }}' \
+{% if magento2_base_url is defined and magento2_base_url!='' %}
+--base-url='{{ magento2_base_url }}' \
+{% endif %}
+{% if magento2_backend_frontname is defined and magento2_backend_frontname!='' %}
+--backend-frontname='{{ magento2_backend_frontname }}' \
+{% endif %}
+{% if magento2_db_host is defined and magento2_db_host!='' %}
+--db-host='{{ magento2_db_host }}' \
+{% endif %}
+{% if magento2_db_name is defined and magento2_db_name!='' %}
+--db-name='{{ magento2_db_name }}' \
+{% endif %}
+{% if magento2_db_user is defined and magento2_db_user!='' %}
+--db-user='{{ magento2_db_user }}' \
+{% endif %}
+{% if magento2_db_password is defined and magento2_db_password!='' %}
+--db-password='{{ magento2_db_password }}' \
+{% endif %}
+{% if magento2_db_prefix is defined and magento2_db_prefix!='' %}
+--db-prefix='{{ magento2_db_prefix }}' \
+{% endif %}
+{% if magento2_language is defined and magento2_language!='' %}
+--language='{{ magento2_language }}' \
+{% endif %}
+{% if magento2_currency is defined and magento2_currency!='' %}
+--currency='{{ magento2_currency }}' \
+{% endif %}
+{% if magento2_timezone is defined and magento2_timezone!='' %}
+--timezone='{{ magento2_timezone }}' \
+{% endif %}
+{% if magento2_use_rewrites is defined and magento2_use_rewrites!='' %}
+--use-rewrites='{{ magento2_use_rewrites }}' \
+{% endif %}
+{% if magento2_use_secure is defined and magento2_use_secure!='' %}
+--use-secure='{{ magento2_use_secure }}' \
+{% endif %}
+{% if magento2_base_url_secure is defined and magento2_base_url_secure!='' %}
+--base-url-secure='{{ magento2_base_url_secure }}' \
+{% endif %}
+{% if magento2_use_secure_admin is defined and magento2_use_secure_admin!='' %}
+--use-secure-admin='{{ magento2_use_secure_admin }}' \
+{% endif %}
+{% if magento2_use_security_key is defined and magento2_use_security_key!='' %}
+--admin-use-security-key='{{ magento2_use_security_key }}' \
+{% endif %}
+{% if magento2_session_save is defined and magento2_session_save!='' %}
+--session-save='{{ magento2_session_save }}' \
+{% endif %}
+{% if magento2_key is defined and magento2_key!='' %}
+--key='{{ magento2_key }}' \
+{% endif %}
+{% if magento2_cleanup_database is defined and magento2_cleanup_database!='' %}
+--cleanup-database \
+{% endif %}
+{% if magento2_sales_order_increment_prefix is defined and magento2_sales_order_increment_prefix!='' %}
+--sales-order-increment-prefix='{{ magento2_sales_order_increment_prefix }}' \
+{% endif %}

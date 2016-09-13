@@ -1,0 +1,12 @@
+---
+- name: "Download : Download"
+  shell: >
+    COMPOSER_AUTH='{"http-basic":{"repo.magento.com":{"username":"{{ magento2_auth_public_key }}","password":"{{ magento2_auth_private_key }}"}}}'
+    {{ magento2_magerun_bin_path }} install --magentoVersionByName="{{ magento2_version_to_install }}"
+    --installationFolder="{{ magento2_install_path }}"
+    --only-download
+    --no-interaction
+  args:
+    creates: "{{ magento2_install_path }}/composer.json"
+- name: "Download : Ensure magento cli bin is executable"
+  file: path={{ magento2_install_path }}/bin/magento state=file mode=0755
