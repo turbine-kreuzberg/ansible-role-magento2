@@ -1,7 +1,7 @@
-Role Name
-=========
+Ansible role votum.magento2
+===========================
 
-A brief description of the role goes here.
+Ansible role to install Magento2 e-commerce system.
 
 Requirements
 ------------
@@ -21,16 +21,17 @@ The instance name is used as a label mainly for the cronjobs. Usefull in case u 
 
 Magento version string of the version to install. Version strings are taken from the magerun2 install command.
 Possible values are:
- _magento-ce-2.1.0_
- _magento-ce-2.0.7_
- _magento-ce-2.0.6_
- _magento-ce-2.0.5_
- _magento-ce-2.0.4_
- _magento-ce-2.0.2_
- _magento-ce-2.0.1_
- _magento-ce-2.0.0_
- _..._
- _(you should've got the idea)_
+
+ * _magento-ce-2.1.0_
+ * _magento-ce-2.0.7_
+ * _magento-ce-2.0.6_
+ * _magento-ce-2.0.5_
+ * _magento-ce-2.0.4_
+ * _magento-ce-2.0.2_
+ * _magento-ce-2.0.1_
+ * _magento-ce-2.0.0_
+ * _..._
+ * _(you should've got the idea)_
  
     magento2_install_path: "/var/www"
 
@@ -120,16 +121,26 @@ Specify a string value to use as a prefix for sales orders. Typically, this is u
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
+    ---
+    - name: setup demo installation magento-ce-2.0
+      hosts: app
+    
+      vars_files:
+        - group_vars/main.yml
+        - group_vars/magento2-ce20-demo.yml
+    
+      pre_tasks: []
+    
       roles:
-         - { role: username.rolename, x: 42 }
+        - { role: votum.magerun2 }
+        - { role: votum.magento2, ansible_become: yes, ansible_become_user: www-data }
+    
+      post_tasks: []
 
 License
 -------
@@ -139,4 +150,4 @@ MIT
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Copyright VOTUM GmbH (info@votum.de)
