@@ -1,9 +1,7 @@
 Ansible role votum.magento2
 ===========================
-
+[![Build Status](https://travis-ci.org/votum/ansible-role-magento2.svg?branch=master)](https://travis-ci.org/votum/ansible-role-magento2)
 Ansible role to install Magento2 e-commerce system. 
-
-https://travis-ci.org/votum/ansible-role-magento2.svg?branch=master
 
 Requirements
 ------------
@@ -24,16 +22,16 @@ The instance name is used as a label mainly for the cronjobs. Usefull in case u 
 Magento version string of the version to install. Version strings are taken from the magerun2 install command.
 Possible values are:
 
- * _magento-ce-2.1.0_
- * _magento-ce-2.0.7_
- * _magento-ce-2.0.6_
- * _magento-ce-2.0.5_
- * _magento-ce-2.0.4_
- * _magento-ce-2.0.2_
- * _magento-ce-2.0.1_
- * _magento-ce-2.0.0_
- * _..._
- * _(you should've got the idea)_
+ _magento-ce-2.1.0_
+ _magento-ce-2.0.7_
+ _magento-ce-2.0.6_
+ _magento-ce-2.0.5_
+ _magento-ce-2.0.4_
+ _magento-ce-2.0.2_
+ _magento-ce-2.0.1_
+ _magento-ce-2.0.0_
+ _..._
+ _(you should've got the idea)_
  
     magento2_install_path: "/var/www"
 
