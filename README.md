@@ -1,7 +1,9 @@
 Ansible role votum.magento2
 ===========================
 
-Ansible role to install Magento2 e-commerce system.
+Ansible role to install Magento2 e-commerce system. 
+
+https://travis-ci.org/votum/ansible-role-magento2.svg?branch=master
 
 Requirements
 ------------
